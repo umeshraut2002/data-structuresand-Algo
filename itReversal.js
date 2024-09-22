@@ -2,7 +2,9 @@
 
 function intRev(num){
     const rev = num.toString().split('').reverse().join("");
-    return rev;
+    // console.log(typeof(parseInt(rev) * Math.sign(num)));
+    return parseInt(rev) * Math.sign(num);
+    
 }
 
 const num = 1234;
