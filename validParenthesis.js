@@ -8,8 +8,12 @@ function valid(arg){
     let stack = []
 
     for(let char of arg){
+
+        console.log("i AM CHAR: ",char);
+        
+
         if(obj[char]){
-            console.log(obj[char]);
+            console.log("I AM IF COND: ",obj[char]);
             
             stack.push(char);
         }
