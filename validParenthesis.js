@@ -1,20 +1,27 @@
 function valid(arg){
-    const isValid = arg.toString().split('');
+    let obj = {
+        "(" : ")",
+        "{" : "}",
+        "[" : "]"
+    }
 
-    console.log(isValid);
-    
+    let stack = []
 
-    for(let i = 0; i < isValid.length; i++){
-        if(isValid[i] === isValid[i+1]){
-            return true;
+    for(let char of arg){
+        if(obj[char]){
+            console.log(obj[char]);
+            
+            stack.push(char);
         }
-        else{
-            return false;
+        else if(obj[stack.pop()] !== char){
+            console.log(obj[stack.pop()]);
+           return false;
         }
     }
 
+    return stack.length== 0;
+
 }
 
-const arg = "()[]{}";
-
+const arg = "{}()[]{}"
 console.log(valid(arg));
