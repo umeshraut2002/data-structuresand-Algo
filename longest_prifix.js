@@ -29,3 +29,6 @@ function long_prefix(str){
 const str = ["flower","flow","flight"];
 
 console.log(long_prefix(str));
+
+// this all about the longest prefix best way to aproach by trie data structure using 
+// trie data structure time complexity is O(L) which best complexity than binary searh tree which is O(log n) 
