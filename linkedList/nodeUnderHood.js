@@ -30,7 +30,33 @@ class linkedList{
 
         this.length++;
         return this;
+    }
 
+    pop(value){
+        const newNode = new Node(value);
+
+        if(!this.head) return undefined;
+
+        let temp = this.head;
+        let pre = this.head;
+
+        while(temp.next){
+            pre = temp;
+            temp = temp.next;
+        }
+
+        this.tail = pre;
+        this.tail.next = null;
+        this.length--;
+
+        if(this.length === 0){
+            this.head = null;
+            this.tail = null;
+        }
+
+        console.log(`temp: ${temp}`);
+
+        return temp;
     }
 }
 
@@ -39,5 +65,11 @@ myLinkedList.push(6);
 myLinkedList.push(10);
 myLinkedList.push(11);
 
-console.log(myLinkedList)
+// console.log(myLinkedList);
+
+console.log(myLinkedList.pop())
+
+console.log(myLinkedList);
+
+
 
