@@ -96,7 +96,23 @@ class linkedList{
         return temp;
     }
 
-}
+    get(index){
+
+        if(index < 0 || index >= this.length){
+            return undefined;
+        }
+
+        let temp = this.head;
+
+        for(let i = 0; i < index; i++){
+            temp = temp.next;
+        }
+
+        return temp;
+
+        }
+    }
+
 
 let myLinkedList = new linkedList(5);
 myLinkedList.push(9);
@@ -110,7 +126,10 @@ myLinkedList.push(7);
 
 // console.log(myLinkedList.pop())
 
-myLinkedList.unshift(16);
-myLinkedList.shift();
+// myLinkedList.unshift(16);
+// myLinkedList.shift();
 
-console.log(myLinkedList);
+
+// console.log(myLinkedList);
+
+console.log(myLinkedList.get(5));
