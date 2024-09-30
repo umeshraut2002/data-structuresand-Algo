@@ -76,6 +76,25 @@ class linkedList{
 
     }
 
+    // shift 
+
+    shift(value){
+        const newNode = new Node(value);
+        
+        if(!this.head){
+            return undefined;
+        }
+
+        let temp = this.head;
+        this.head = this.head.next;
+        temp.next = null;
+        this.length--;
+
+        if(this.length === 0){
+            this.tail = null;
+        }
+    }
+
 }
 
 let myLinkedList = new linkedList(5);
@@ -91,5 +110,6 @@ myLinkedList.push(7);
 // console.log(myLinkedList.pop())
 
 myLinkedList.unshift(16);
+myLinkedList.shift();
 
 console.log(myLinkedList);
