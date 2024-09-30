@@ -58,18 +58,38 @@ class linkedList{
 
         return temp;
     }
+
+    unshift(value){
+        const newNode = new Node(value);
+        
+        if(!this.head){
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else{
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+
+        this.length++;
+        return this;
+
+    }
+
 }
 
 let myLinkedList = new linkedList(5);
-myLinkedList.push(6);
-myLinkedList.push(10);
+myLinkedList.push(9);
+myLinkedList.push(4);
+myLinkedList.push(3);
 myLinkedList.push(11);
-
+myLinkedList.push(10);
+myLinkedList.push(6);
+myLinkedList.push(7);
 // console.log(myLinkedList);
 
-console.log(myLinkedList.pop())
+// console.log(myLinkedList.pop())
+
+myLinkedList.unshift(16);
 
 console.log(myLinkedList);
-
-
-
