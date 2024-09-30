@@ -93,6 +93,8 @@ class linkedList{
         if(this.length === 0){
             this.tail = null;
         }
+
+        return temp;
     }
 
 }
