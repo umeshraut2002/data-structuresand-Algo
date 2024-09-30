@@ -19,7 +19,7 @@ class linkedList{
     }
 
     push(value){
-        const newNode = new Node;
+        const newNode = new Node(value);
         if(!this.head){
             this.head = newNode;
             this.tail = newNode
@@ -34,8 +34,10 @@ class linkedList{
     }
 }
 
-const myLinkedList = new linkedList(4);
+let myLinkedList = new linkedList(5);
+myLinkedList.push(6);
+myLinkedList.push(10);
+myLinkedList.push(11);
 
-myLinkedList.push(5);
+console.log(myLinkedList)
 
-console.table(myLinkedList);
