@@ -111,6 +111,17 @@ class linkedList{
         return temp;
 
         }
+
+        set(index, value){
+            let temp = this.get(index);
+
+            if(temp){
+                temp.value = value;
+            }
+
+            return temp;
+        }
+
     }
 
 
@@ -132,4 +143,8 @@ myLinkedList.push(7);
 
 // console.log(myLinkedList);
 
-console.log(myLinkedList.get(5));
+// console.log("I AM GET",myLinkedList.get(5));
+
+console.log("I AM SET: ",myLinkedList.set(0, 10));
+console.log("I AM 2: ",myLinkedList.set(7,12));
+console.log(myLinkedList)
