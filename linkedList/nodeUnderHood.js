@@ -117,9 +117,10 @@ class linkedList{
 
             if(temp){
                 temp.value = value;
+                return true;
             }
 
-            return temp;
+            return false;
         }
 
     }
