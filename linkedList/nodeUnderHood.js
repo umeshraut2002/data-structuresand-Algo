@@ -138,6 +138,20 @@ class linkedList{
             return true;
         }
 
+        remove(index){
+            if(index < 0 || index >= this.length) return undefined;
+            if(index === this.length) return this.pop();
+            if(index === 0) return this.shift();
+
+            const before = this.get(index - 1);
+            const temp = before.next;
+            before.next = temp.next;
+            temp.next = null;
+            this.length--;
+            return temp;
+
+        }
+
     }
 
 
@@ -165,5 +179,9 @@ myLinkedList.push(7);
 // console.log("I AM 2: ",myLinkedList.set(7,12));
 // console.log(myLinkedList)
 
-console.log("ITS ME INSERT: ",myLinkedList.insert(7,80));
-console.log(myLinkedList)
+// console.log("ITS ME INSERT: ",myLinkedList.insert(7,80));
+// console.log(myLinkedList.shift(177));
+// console.log(myLinkedList)
+
+console.log(myLinkedList.remove(2))
+console.log(myLinkedList);
