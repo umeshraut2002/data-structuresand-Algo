@@ -123,6 +123,21 @@ class linkedList{
             return false;
         }
 
+        insert(index, value){
+            if(index < 0 || index >= this.length) return false;
+            if(index === 0) return this.unshift(value);
+            if(index === this.length) return this.push(value)
+
+            const newNode = new Node(value);
+            const temp = this.get(index - 1);
+            
+            newNode.next = temp.next;
+            temp.next = newNode
+            this.length++;
+            return temp;
+            return true;
+        }
+
     }
 
 
@@ -146,6 +161,9 @@ myLinkedList.push(7);
 
 // console.log("I AM GET",myLinkedList.get(5));
 
-console.log("I AM SET: ",myLinkedList.set(0, 10));
-console.log("I AM 2: ",myLinkedList.set(7,12));
+// console.log("I AM SET: ",myLinkedList.set(0, 10));
+// console.log("I AM 2: ",myLinkedList.set(7,12));
+// console.log(myLinkedList)
+
+console.log("ITS ME INSERT: ",myLinkedList.insert(7,80));
 console.log(myLinkedList)
