@@ -52,7 +52,7 @@ class myList{
         
         if(!this.head){
             this.head = newNode;
-            thistail = newNode;
+            this.tail = newNode;
         }
         else{
             this.tail.next = newNode
