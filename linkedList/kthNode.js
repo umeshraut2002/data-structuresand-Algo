@@ -91,7 +91,7 @@ class myList {
 }
 
 const list = new myList;
-const k = 6;
+const k = 3;
 
 list.push(1);
 list.push(2);
