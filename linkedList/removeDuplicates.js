@@ -68,16 +68,19 @@ class linkedList{
 
     removeDuplicate(){
         const set = new Set();
+
         let prev = null;
+
         let curr = this.head;
+        console.log("Current: ",curr)
 
         while(curr !== null){
-            if(set.has(curr.value)){
+            if(set.has(curr.value)){ // filter the list 
                 prev.next = curr.next;
                 this.length--;
             }
             else{
-                set.add(curr.value)
+                set.add(curr.value) // it adds unique values in set 
                 prev = curr;
             }
 
