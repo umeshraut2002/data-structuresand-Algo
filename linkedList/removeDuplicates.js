@@ -66,29 +66,40 @@ class linkedList{
         }
     }
 
-    removeDuplicate(value){
-        const newNode = new Node(value);
+    removeDuplicate(){
+        const set = new Set();
+        let prev = null;
+        let curr = this.head;
 
-        let set = new Set();
-        let temp = this.head;
-        for(let i = 0; i < this.length; i++){
-        if(set !== temp.next){
-            set.push(i);
-        }
-        else{
-            set.push(i);
+        while(curr !== null){
+            if(set.has(curr.value)){
+                prev.next = curr.next;
+                this.length--;
+            }
+            else{
+                set.add(curr.value)
+                prev = curr;
+            }
+
+            curr = curr.next;
         }
     }
+        
     }
-}
 
 const myList = new linkedList;
 
-myList.push(1);
-myList.push(2);
+myList.push(1); // this.head || temp 
+myList.push(2); // temp = temp.next  
 myList.push(2);
 myList.push(4);
 myList.push(3);
 myList.push(1);
+myList.push(5);
 
 console.log(myList)
+
+
+console.log(myList.removeDuplicate());
+
+console.log(myList);
