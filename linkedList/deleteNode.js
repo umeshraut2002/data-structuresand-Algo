@@ -1,9 +1,9 @@
 class Node{
     constructor(value){
-        this.value = value;
-        this.next = null;
+        this.head = value;
+        this.tail = null;
     }
-} 
+}
 
 class linkedList{
     constructor(value){
@@ -25,10 +25,10 @@ class linkedList{
 
     getHead(){
         if(this.head === null){
-            console.log("Head : Null")
+            console.log("head : null");
         }
         else{
-            console.log(this.head)
+            console.log(this.head);
         }
     }
 
@@ -37,23 +37,24 @@ class linkedList{
             console.log("Tail : Null");
         }
         else{
-            console.log(this.tail);
+            console.log(this.tail)
         }
     }
 
     makeEmpty(){
         this.head = null;
         this.tail = null;
-        this.length = 0;
+        this.length = null;
     }
 
     push(value){
         const newNode = new Node(value);
 
         if(!this.head){
-            this.head.value = newNode;
-            this.tail.newNode;
+            this.head = newNode;
+            this.tail = newNode;
         }
+
         else{
             this.tail.next = newNode;
             this.tail = newNode;
@@ -61,25 +62,6 @@ class linkedList{
 
         this.length++;
     }
-
-    reverseList(){
-        let temp = this.head;
-        this.head = this.tail;
-        this.tail = temp;
-
-        let next = temp.next;
-        let prev = null;
-
-        for(let i = 0; i < this.length; i++){
-            next = temp.next;
-            temp.next = prev;
-            prev = temp;
-            temp = next;
-        }
-
-        return this;
-    }
-    
 }
 
 const list = new linkedList;
@@ -88,9 +70,5 @@ list.push(1);
 list.push(2);
 list.push(3);
 list.push(4);
-list.push(5);
-list.push(6);
 
 console.log(list)
-
-console.log(list.reverseList())
