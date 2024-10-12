@@ -86,8 +86,8 @@ class linkedList{
 
             curr = curr.next;
         }
-    }
-        
+    }    
+
     }
 
 const myList = new linkedList;
